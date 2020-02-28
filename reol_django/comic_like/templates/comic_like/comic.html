@@ -1,0 +1,8 @@
+{% extends "comic_like/base.html" %}
+{% block titulo %}{{ comic|stringformat:"" }}{% endblock %}
+
+{% block contenido %}
+{% for p in paginas %}
+<a href="{% url 'pagina' comic.id p.numero %}">{{ forloop.counter }}</a>
+{% endfor %}
+{% endblock%}

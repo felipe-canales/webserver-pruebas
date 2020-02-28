@@ -1,0 +1,8 @@
+{% extends "comic_like/base.html" %}
+{% block titulo %}Lista de historias{% endblock %}
+
+{% block contenido %}
+{% for c in comics %}
+<p><a href="{% url 'comic' c.id %}">{{ c.nombre }}</a></p>
+{% endfor %}
+{% endblock %}

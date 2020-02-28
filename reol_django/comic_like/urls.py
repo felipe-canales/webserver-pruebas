@@ -2,6 +2,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # comic/1/1
-    path('<int:comic_id>/<int:comic_page>', views.pagina, name='pagina')
+    # index/
+    path('index/', views.index, name='c_index'),
+    # show/1
+    path('show/<int:comic_id>', views.comic, name='comic'),
+    # show/1/1
+    path('show/<int:comic_id>/<int:comic_page>', views.pagina, name='pagina'),
+    path('', views.home, name='home')
 ]

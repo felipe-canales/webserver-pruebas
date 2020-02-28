@@ -1,5 +1,7 @@
 reol_static/
+reol_media/
 reol_django/db.sqlite3
+reol_django/djk.txt
 reol_django/comic_like/migrations/
 reol_django/comic_like/__pycache__/
 reol_django/reol_django/__pycache__/
