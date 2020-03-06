@@ -1,3 +1,4 @@
+import os
 """
 Django settings for reol_django project.
 
@@ -20,12 +21,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fib03*e=1-!zi0sp=a@_$82d)ih=i91+)_!bl_8eg30!+yafhf'
+with open('djk.txt', 'r') as skf:
+    SECRET_KEY = skf.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'django.reol.cl',
+    'www.reol.cl',
+    'reol.cl',
+    '192.168.1.83'
+]
 
 
 # Application definition

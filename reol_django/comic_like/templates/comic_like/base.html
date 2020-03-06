@@ -3,11 +3,19 @@
     <head>
         <meta charset="utf-8">
         <title>{% block titulo %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="http://static.reol.cl/reol.css">
     </head>
     <body>
-        <div syle="text-align:center;">
-            {% block contenido %}
-            {% endblock %}
+        <div class="sidebar">
+            <ul>
+                <li class="sidelink"><a href="{% url 'home' %}">Inicio</a></li>
+                <li class="sidelink"><a href="{% url 'c_index' %}">Historias</a></li>
+                <li class="sidelink"><a href="{% url 'not_implemented' %}">Rincón Secreto</a></li>
+                <li class="sidelink"><a href="{% url 'not_implemented' %}">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            {% block contenido %}{% endblock %}
         </div>
     </body>
 </html>

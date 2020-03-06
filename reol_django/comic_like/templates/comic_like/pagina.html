@@ -1,8 +1,23 @@
 {% extends "comic_like/base.html" %}
-{% block titulo %}{{ pagina|stringformat:"" }}{% endblock %}
+{% block titulo %}{{ pagina.comic.nombre }} - {{ pagina.numero }}{% endblock %}
 
 {% block contenido %}
-<img src="http://media.reol.cl/{{ pagina.ubicacion }}">
+<img src="http://media.reol.cl/{{ pagina.ubicacion }}" height=800>
 <br>
-<button>Anterior</button><button>Siguiente</button>
+<div class="adjuntos">
+    {% for adjunto in pagina.adjuntos.all %}
+    {% if adjunto.tipo == adjunto.AUDIO %}
+    <audio controls src="http://media.reol.cl/{{ adjunto.ubicacion }}" type="audio/ogg">
+    </audio>
+    {% elif adjunto.tipo == adjunto.VIDEO %}
+    <video height="400" controls src="http://media.reol.cl/{{ adjunto.ubicacion }}" type="video/mp4">
+    </video>
+    {% endif %}
+    {% endfor %}
+</div>
+{% if pagina.numero > 1 %}
+<a href="{% url 'pagina' pagina.comic.id pagina.anterior %}"><button>&lt; Anterior</button></a>
+{% endif %}
+<a href="{% url 'comic' pagina.comic.id %}"><button>Volver</button></a>
+<a href="{% url 'pagina' pagina.comic.id pagina.siguiente %}"><button>Siguiente &gt;</button></a>
 {% endblock%}

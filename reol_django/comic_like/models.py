@@ -18,6 +18,14 @@ class Pagina(models.Model):
     def __str__(self):
         return "{} - {:002d}".format(self.comic.nombre, self.numero)
 
+    @property
+    def siguiente(self):
+        return self.numero + 1
+
+    @property
+    def anterior(self):
+        return self.numero - 1
+
 
 class Adjunto(models.Model):
     VIDEO = 1

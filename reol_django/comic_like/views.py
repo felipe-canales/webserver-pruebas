@@ -7,6 +7,10 @@ def home(request):
     return render(request, 'comic_like/home.html')
 
 
+def not_implemented(request):
+    return render(request, 'comic_like/notyet.html')
+
+
 def index(request):
     context = {'comics': Comic.objects.all()}
     return render(request, 'comic_like/index.html', context)
