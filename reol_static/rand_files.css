@@ -1,0 +1,15 @@
+
+body {
+	background-color: #c4c4c4
+}
+
+.col-lg {
+	background-color: #0d3980;
+	border-radius: 10px;
+	color: #f0f0f0;
+}
+
+.title {
+	margin: 50px;
+	text-align: center;
+}
