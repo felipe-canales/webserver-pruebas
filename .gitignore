@@ -6,3 +6,4 @@ reol_django/comic_like/__pycache__/
 reol_django/reol_django/__pycache__/
 reol_bottle/login_file.py
 reol_bottle/users.csv
+reol_bottle/__pycache__/
