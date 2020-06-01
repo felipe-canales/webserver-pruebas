@@ -1,4 +1,5 @@
 reol_media/
+reol_static/bottle
 reol_django/db.sqlite3
 reol_django/djk.txt
 reol_django/django_venv/
