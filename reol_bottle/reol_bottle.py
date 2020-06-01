@@ -34,7 +34,7 @@ def login():
 @route('/logout')
 def logout():
     del_token(request.get_cookie('log_token'))
-    response.set_cookie('log_token', '', expires='Thu, 01 Jan 1970 00:00:00 GMT')
+    response.set_cookie('log_token', '')
     redirect('/login')
 
 
@@ -42,4 +42,4 @@ def logout():
 def notfound():
     return "There's nothing here."
 
-run(debug =True)
+#run(debug =True)
